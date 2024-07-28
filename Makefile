@@ -81,8 +81,8 @@ set_sizes: $(SIZES) $(UTIL)
 install: $(TARGETS)
 	mkdir -p bin 
 	for executable in $(TARGETS); do \
-		/bin/mv $${executable} ../bin/$${executable}; \
-		chmod 755 ../bin/$${executable}; \
+		mv $${executable} ./bin/$${executable}; \
+		chmod 755 ./bin/$${executable}; \
 	done
 
 clean:
@@ -91,5 +91,5 @@ clean:
 
 realclean: clean
 	for executable in $(TARGETS); do \
-                /bin/rm -f ../bin/$${executable}*; \
+                rm -f ./bin/$${executable}*; \
 	done
