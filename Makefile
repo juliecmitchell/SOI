@@ -79,16 +79,17 @@ set_sizes: $(SIZES) $(UTIL)
 	$(F77) -c $(FFLAGS) $<
 
 install: $(TARGETS)
+	mkdir bin
 	for executable in $(TARGETS); do \
-		/bin/mv $${executable} ../bin/$${executable}; \
-		chmod 755 ../bin/$${executable}; \
+		mv $${executable} ./bin/$${executable}; \
+		chmod 755 ./bin/$${executable}; \
 	done
 
 clean:
-	/bin/rm -f *.o *~
-	/bin/rm -f $(TARGETS) core 
+	./bin/rm -f *.o *~
+	./bin/rm -f $(TARGETS) core 
 
 realclean: clean
 	for executable in $(TARGETS); do \
-                /bin/rm -f ../bin/$${executable}*; \
+                ./bin/rm -f ../bin/$${executable}*; \
 	done
