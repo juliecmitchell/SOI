@@ -11,7 +11,7 @@ HOW TO INSTALL AND RUN:
        - it may be necessary to change the name of your compiler, so 
          try replacing "cc" with "gcc" if you get an error.
 
-   3. Move to the bin directory ( cd ../bin ) 
+   3. Move to the bin directory ( cd ./bin ) 
 
    4. Type the name of a program ( ./sample_icosa )
        - this will tell you the program call to use
