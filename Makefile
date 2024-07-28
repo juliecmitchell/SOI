@@ -5,26 +5,26 @@ CPP	= c++
 F77	= f77
 MPIC	=
 MPIF	= hf77
-CFLAGS	= -g -O2
+CFLAGS	= -g -O2 
 FFLAGS	= -O2
-LDFLAGS	=
+LDFLAGS	=  
 LIBS	= -lm
 SYS	=
-SPECIAL	=
+SPECIAL	= 
 RANLIB	= /bin/true
 SHELL	= /bin/sh
 ###############################################################################
 
 TARGETS	=	test_energy test_coverage test_separation sample_icosa sample_sphere sample_ellipsoid sample_soi pts2pdb normalize set_sizes
 
-UTIL =	rotutils.h
+UTIL =	rotutils.h	
 
-COV 	=	test_coverage.o rotutils.o
-ENG 	=	test_energy.o rotutils.o
+COV 	=	test_coverage.o rotutils.o 
+ENG 	=	test_energy.o rotutils.o  
 SEP 	=	test_separation.o rotutils.o
 
-ICOSA 	=	sample_icosa.o rotutils.o
-ELLIPSE 	=	sample_ellipsoid.o rotutils.o
+ICOSA 	=	sample_icosa.o rotutils.o 
+ELLIPSE 	=	sample_ellipsoid.o rotutils.o  
 SPHERE 	=	sample_sphere.o rotutils.o
 ROTS 	=	sample_soi.o rotutils.o
 PTS 	=	pts2pdb.o rotutils.o
@@ -32,7 +32,7 @@ NORM	=	normalize.o rotutils.o
 SIZES	=	set_sizes.o rotutils.o
 
 #: Default rule
-default: install clean
+default: install clean   
 
 # Rules to link object files into executables
 
@@ -79,16 +79,17 @@ set_sizes: $(SIZES) $(UTIL)
 	$(F77) -c $(FFLAGS) $<
 
 install: $(TARGETS)
+	mkdir -p bin
 	for executable in $(TARGETS); do \
-		mv $${executable} ./bin/$${executable}; \
-		chmod 755 ./bin/$${executable}; \
+		/bin/mv $${executable} ../bin/$${executable}; \
+		chmod 755 ../bin/$${executable}; \
 	done
 
 clean:
-	rm -f *.o *~
-	rm -f $(TARGETS) core
+	/bin/rm -f *.o *~
+	/bin/rm -f $(TARGETS) core 
 
 realclean: clean
 	for executable in $(TARGETS); do \
-                rm -f ./bin/$${executable}*; \
+                /bin/rm -f ../bin/$${executable}*; \
 	done
