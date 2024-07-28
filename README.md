@@ -16,17 +16,9 @@ HOW TO INSTALL AND RUN:
    4. Type the name of a program ( ./sample_icosa )
        - this will tell you the program call to use
 
-   5. If none of this works, and you just want to generate a rotation/sphere
-      sample, consider using the web service ( http://www.mitchell-lab.org )
-
-
-
 CITATION:
 
 JC Mitchell (2008) Sampling Rotation Groups by Successive Orthogonal Images. SIAM Journal on Scientific Computing, vol. 30, issue 1, pp. 525-547. https://doi.org/10.1137/03060187
-
-
-
 
 LIST OF PROGRAMS:
 
